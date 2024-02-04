@@ -14,7 +14,7 @@ const char* map_file_name = "map_file.dat";
 int test_anon_map_readwrite()
 {
     void* map = mmap(NULL, 1024, PROT_READ | PROT_WRITE,
- 		      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+         MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
     if (map == MAP_FAILED)
     {
         printf("mmap (MAP_ANONYMOUS, PROT_READ | PROT_WRITE) returned unexpected error: %d\n", errno);
@@ -34,7 +34,7 @@ int test_anon_map_readwrite()
 int test_anon_map_readonly()
 {
     void* map = mmap(NULL, 1024, PROT_READ,
- 		      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+         MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
     if (map == MAP_FAILED)
     {
         printf("mmap (MAP_ANONYMOUS, PROT_READ) returned unexpected error: %d\n", errno);
@@ -54,7 +54,7 @@ int test_anon_map_readonly()
 int test_anon_map_writeonly()
 {
     void* map = mmap(NULL, 1024, PROT_WRITE,
- 		      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+         MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
     if (map == MAP_FAILED)
     {
         printf("mmap (MAP_ANONYMOUS, PROT_WRITE) returned unexpected error: %d\n", errno);
@@ -74,7 +74,7 @@ int test_anon_map_writeonly()
 int test_anon_map_readonly_nowrite()
 {
     void* map = mmap(NULL, 1024, PROT_READ,
- 		      MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+         MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
     if (map == MAP_FAILED)
     {
         printf("mmap (MAP_ANONYMOUS, PROT_READ) returned unexpected error: %d\n", errno);

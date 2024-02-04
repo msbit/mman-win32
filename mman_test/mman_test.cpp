@@ -14,12 +14,12 @@ namespace mmantest
 {
     const char *map_file_name = "map_file.dat";
 
-	TEST_CLASS(mmantest)
-	{
-	public:
-		
-		TEST_METHOD(test_anon_map_readwrite)
-		{
+    TEST_CLASS(mmantest)
+    {
+    public:
+
+        TEST_METHOD(test_anon_map_readwrite)
+        {
             void *map = mmap(nullptr, 1024, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
 
             Assert::AreNotEqual(MAP_FAILED, map);
@@ -29,7 +29,7 @@ namespace mmantest
             int result = munmap(map, 1024);
 
             Assert::AreEqual(0, result);
-		}
+        }
 
         TEST_METHOD(test_anon_map_readonly)
         {
@@ -153,5 +153,5 @@ namespace mmantest
         done:
             return;
         }
-	};
+    };
 }
